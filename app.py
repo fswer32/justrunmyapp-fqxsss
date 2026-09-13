@@ -453,7 +453,7 @@ def renew(sb) -> bool:
 
     print("🖱️ 查找应用")
     try:
-        sb.wait_for_element('span:contains("Free tier")', timeout=10)
+        sb.wait_for_element('span:contains("Free tier")', timeout=30)
         sb.click('span:contains("Free tier")')
         time.sleep(3)
         print(f"📍 成功进入应用详情页: {sb.get_current_url()}")
