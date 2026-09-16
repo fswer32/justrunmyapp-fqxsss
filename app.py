@@ -449,12 +449,14 @@ def renew(sb) -> bool:
 
     print("🌐 进入控制面板: https://justrunmy.app/panel/applications")
     sb.open("https://justrunmy.app/panel/applications")
-    time.sleep(3)
+    time.sleep(10)
 
     print("🖱️ 查找应用")
     try:
-        sb.wait_for_element('span:contains("Free tier")', timeout=30)
-        sb.click('span:contains("Free tier")')
+        #sb.wait_for_element('span:contains("Free tier")', timeout=30)
+        sb.open("https://justrunmy.app/panel/application/61129/")
+        time.sleep(30)
+        #sb.click('span:contains("Free tier")')
         time.sleep(3)
         print(f"📍 成功进入应用详情页: {sb.get_current_url()}")
     except Exception as e:
